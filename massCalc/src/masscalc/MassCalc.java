@@ -7,6 +7,7 @@ package masscalc;
 
 import java.util.Scanner;
 import org.json.JSONObject;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -26,6 +27,12 @@ public class MassCalc {
         getUserInput(args,com);
         getWeights(com);
         CalcMass.Calculate(com);
+        DecimalFormat form = new DecimalFormat("0.00");
+        for(int i=0;i<com.getNoElements();i++)
+        {
+        System.out.println("Weight of the element "+ com.getElement()[i].getName() +" in "+ com.getWeight() + " grams of the compound is: ");
+        System.out.println(form.format(  com.getElement()[i].getCalcElWeight()) + " grams");  
+        }
         }
         catch(Exception ex)
         {
