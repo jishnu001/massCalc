@@ -9,7 +9,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,7 +29,7 @@ public class ReadJSON {
    
    }
     
-    public  void ReadJSONValues() throws FileNotFoundException, JSONException {
+    public static JSONObject ReadJSONValues() throws FileNotFoundException, JSONException {
        
          String jsonData = "";
 		BufferedReader br = null;
@@ -54,9 +53,8 @@ public class ReadJSON {
 
 		//System.out.println("File Content: \n" + jsonData);
 		JSONObject obj = new JSONObject(jsonData);
-                 Scanner scan = new Scanner(System.in);
-                String s = scan.next();
-                   getData(obj,s);
+                return obj;
+                  // getData(obj,s);
     
     }
     
