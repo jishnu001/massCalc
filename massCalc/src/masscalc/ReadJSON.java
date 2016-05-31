@@ -35,7 +35,7 @@ public class ReadJSON {
 		BufferedReader br = null;
 		try {
 			String line;
-			br = new BufferedReader(new FileReader("periodictable.json"));
+			br = new BufferedReader(new FileReader("../periodictable.json"));
 			while ((line = br.readLine()) != null) {
 				jsonData += line + "\n";
 			}
