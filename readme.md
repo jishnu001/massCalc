@@ -11,10 +11,10 @@ Requirements: Java (jre)
 
 Install:
 
-1.Download the zip file
-2.Extract the zip file
-3.Go to dist folder and find the jar file
-4.run "java -jar  massCalc.jar <options as given above>
+1. Download the zip file
+2. Extract the zip file
+3. Go to dist folder and find the jar file
+4. run "java -jar  massCalc.jar <options as given above>
 
 Shout out to https://github.com/MiningPotatoes/PeriodicTable-API for the 
 awesome Periodic Table data
