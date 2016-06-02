@@ -31,21 +31,23 @@ public class MassCalc {
         for(int i=0;i<com.getNoElements();i++)
         {
         System.out.println("Weight of the element "+ com.getElement()[i].getName() +" in "+ com.getWeight() + " grams of the compound is: ");
-        System.out.println(form.format(  com.getElement()[i].getCalcElWeight()) + " grams");  
+        System.out.println(form.format(  com.getElement()[i].getCalcElWeight()) + " grams ");
+        System.out.println("(" + String.format("%6.3e",  com.getElement()[i].getNewNoAtoms() )+ " atoms)");
+
         }
         }
         catch(Exception ex)
         {
         System.out.println("Error "+ ex.toString());
         }
-        
-        
+
+
     }
-    
+
     public static void getWeights(Compound com)
     {
         try{
-            
+
 
             JSONObject obj = ReadJSON.ReadJSONValues();
             for(int i=0;i<com.getNoElements();i++)
@@ -57,26 +59,26 @@ public class MassCalc {
                //System.out.println(com.getElement()[i].getMolarWeight());
                com.setComMolarWeight();
             }
-            
+
         }
         catch(Exception ex)
         {
         System.out.println("Error "+ ex.toString());
         }
-    
-    
+
+
     }
-    
-    
+
+
     public static void getUserInput(String [] args,Compound com)
     {
-    
+
         if(args.length<5)
         {
             System.out.println("Wrong number of arguments;");
             System.out.print("Usage : <no of elem in compund> <ele1 symbol> <no of ele1 atoms> <ele2 symbol> <no of ele2 atoms> ...");
             System.out.print(" <weight of the compound in grams> ");
-            
+
         }
         //System.out.println("Enter the number of elements present in the compound: ");
         //Scanner scan = new Scanner(System.in);
@@ -92,12 +94,12 @@ public class MassCalc {
             //System.out.println("How many "+ ell[i].getName()+" atoms are present in the compound: ");
             ell[i].setNumber(Integer.parseInt(args[j]));
             j++;
-            
+
         }
         com.setElement(ell);
        // System.out.println("Enter the weight of the compound in grams: ");
         com.setWeight(Float.parseFloat(args[j]));
     }
-    
-    
+
+
 }
