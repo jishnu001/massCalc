@@ -8,6 +8,7 @@ package masscalc;
 import java.util.Scanner;
 import org.json.JSONObject;
 import java.text.DecimalFormat;
+import java.lang.Math;
 
 /**
  *
@@ -30,15 +31,15 @@ public class MassCalc {
         DecimalFormat form = new DecimalFormat("0.00");
         for(int i=0;i<com.getNoElements();i++)
         {
-        System.out.println("Weight of the element "+ com.getElement()[i].getName() +" in "+ com.getWeight() + " grams of the compound is: ");
-        System.out.println(form.format(  com.getElement()[i].getCalcElWeight()) + " grams ");
-        System.out.println("(" + String.format("%6.3e",  com.getElement()[i].getNewNoAtoms() )+ " atoms)");
-
+          System.out.println("Weight of the element "+ com.getElement()[i].getName() +" in "+ com.getWeight() + " grams of the compound is: ");
+          System.out.println(form.format(  com.getElement()[i].getCalcElWeight()) + " grams ");
+          System.out.print("(" + String.format("%6.3e",  com.getElement()[i].getNewNoAtoms() )+ " atoms) ");
+          System.out.printf("( %.3f moles) \n", com.getElement()[i].getNewNoMoles());
         }
         }
         catch(Exception ex)
         {
-        System.out.println("Error "+ ex.toString());
+          System.out.println("Error "+ ex.toString());
         }
 
 
